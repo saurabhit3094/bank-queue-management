@@ -1,5 +1,6 @@
 package com.assignment.service;
 
+import com.assignment.dao.CustomerDao;
 import com.assignment.enums.CustomerType;
 import com.assignment.model.Customer;
 import org.junit.Assert;
@@ -19,20 +20,25 @@ public class CustomerServiceImplTest {
     @Autowired
     CustomerService customerService;
 
+    @Autowired
+    CustomerDao customerDao;
+
     @Test
     public void registerCustomer() throws Exception{
         Customer customer = new Customer();
-        customer.setAccountNumber(1254367);
+        customer.setAccountNumber(98765);
         customer.setCustomerType(CustomerType.PREMIUM);
         customer.setName("Rocky");
-        customer.setAddress("Madhapur");
-        customer = customerService.registerCustomer(customer);
+        customer.setAddress("Madhapur");customer = customerService.registerCustomer(customer);
 
         Customer newCustomer = customerService.findCustomer(customer.getAccountNumber());
         Assert.assertEquals(customer.getAccountNumber(),newCustomer.getAccountNumber());
         Assert.assertEquals(customer.getCustomerType(),newCustomer.getCustomerType());
         Assert.assertEquals(customer.getName(),newCustomer.getName());
         Assert.assertEquals(customer.getAddress(),newCustomer.getAddress());
+
+        customerDao.deleteCustomer(customer.getAccountNumber());
+
     }
 
 }

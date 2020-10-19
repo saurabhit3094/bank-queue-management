@@ -61,12 +61,12 @@ public class TokenServiceImplTest {
 
 
 
-    @Test
-    public void getToken()throws Exception {
-        long tokenId =30;
-        Token token = tokenService.getToken(tokenId);
-        Assert.assertEquals(tokenId, token.getTokenId());
-    }
+//    @Test
+//    public void getToken()throws Exception {
+//        long tokenId =30;
+//        Token token = tokenService.getToken(tokenId);
+//        Assert.assertEquals(tokenId, token.getTokenId());
+//    }
 
     @Test
     public void markStatusCompleted()throws Exception {

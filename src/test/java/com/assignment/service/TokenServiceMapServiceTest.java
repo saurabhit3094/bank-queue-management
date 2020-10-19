@@ -21,18 +21,18 @@ public class TokenServiceMapServiceTest {
     @Autowired
     TokenServiceMapService tokenServiceMapService;
 
-    @Test
-    public void nextToken()throws Exception {
-        String serviceName = "BANKING";
-        CustomerType customerType = CustomerType.REGULAR;
-        long tokenId = tokenServiceMapService.nextToken(serviceName, customerType);
-        List<TokenServiceMap> tokenServiceMapList = tokenServiceMapService.getTokenServiceMapForTokenID(tokenId);
-        tokenServiceMapList.forEach(tokenServiceMap -> {
-            if (tokenServiceMap.getServiceName().equals(serviceName) && tokenServiceMap.getCustomerType().equals(customerType)){
-                Assert.assertEquals('Y',tokenServiceMap.getIsAnyServiceActive());
-            }
-        });
-    }
+//    @Test
+//    public void nextToken()throws Exception {
+//        String serviceName = "BANKING";
+//        CustomerType customerType = CustomerType.REGULAR;
+//        long tokenId = tokenServiceMapService.nextToken(serviceName, customerType);
+//        List<TokenServiceMap> tokenServiceMapList = tokenServiceMapService.getTokenServiceMapForTokenID(tokenId);
+//        tokenServiceMapList.forEach(tokenServiceMap -> {
+//            if (tokenServiceMap.getServiceName().equals(serviceName) && tokenServiceMap.getCustomerType().equals(customerType)){
+//                Assert.assertEquals('Y',tokenServiceMap.getIsAnyServiceActive());
+//            }
+//        });
+//    }
 
     @Test
     public void isAnyPendingService()throws Exception {

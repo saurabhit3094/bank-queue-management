@@ -6,4 +6,6 @@ public interface CustomerDao {
     Customer registerCustomer(Customer customer);
 
     Customer findCustomer(long customerId);
+
+    long deleteCustomer(long customerId);
 }
