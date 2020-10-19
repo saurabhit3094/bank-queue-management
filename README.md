@@ -1,4 +1,4 @@
-# queue-management-system
+# bank-queue-management
 
 Provide API to manage queue in different branches of ABC bank .
 
@@ -54,7 +54,7 @@ Provide API to manage queue in different branches of ABC bank .
 
  This API is to get customer detail for given customer id.
 
- 3.**URL : /service/register**
+ 3.**URL : /api/service/register**
 
  **Method :** GET
 
